@@ -19,3 +19,37 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes dotFlashing {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.dot-flashing {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #3498db;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -10px;
+  animation-delay: -0.5s;
+}
+
+.dot-flashing::after {
+  left: 10px;
+  animation-delay: 0.5s;
+}
