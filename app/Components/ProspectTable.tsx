@@ -57,9 +57,7 @@ const ProspectTable: React.FC<DataTableProps> = ({ dataSource,employeeData,setCu
   const currentPage = (employeeData.paging.start / employeeData.paging.count) ;
   return (
     <>
-    <div>
-      {JSON.stringify(employeeData.paging, null, 2)}
-    </div>
+    
     {dataSource && <Table
         columns={columns}
         dataSource={dataSource}

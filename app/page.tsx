@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import ProspectTable from "./Components/ProspectTable"
-import { Select } from 'antd';
+import { Select, Spin } from 'antd';
 
 const { Option } = Select;
 export default function Home() {
@@ -94,16 +94,16 @@ setCompanyData(result.companies)
             className="rounded-full border focus:bg-white focus:bottom-0 border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 md:w-[50vw] px-4 sm:px-5"
             placeholder="Enter Company url"
           /> */}
-
+<h1 className="text-black dark:text-white text-3xl font-bold">Search Profile Based on Company</h1>
 <Select
       showSearch
-      value={companyUrl}
-      placeholder="Select a company"
+      value={companyUrl || undefined}
+      placeholder="Type a company name....."
       notFoundContent={isLoading ? 'Loading...' : 'No companies found'}
       onSearch={getCompanies}
       onChange={(value) => setCompanyUrl(value)}
       filterOption={false} // The filtering is done server-side
-      style={{ width: '50vw',color:'black' }}
+      style={{ width: '50vw',}}
     >
       {companyData &&  companyData.map((company:any) => (
         <Option key={company.id} value={company.id}>{company.title}</Option>
@@ -119,9 +119,7 @@ setCompanyData(result.companies)
 
           {isLoading ? (
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div className="dot-flashing"></div>
-              <div className="dot-flashing"></div>
-              <div className="dot-flashing"></div>
+              <Spin tip="Loading" size="large"/>
             </div>
           ) : (
             <div className="text-center">

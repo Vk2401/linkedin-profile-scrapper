@@ -31,7 +31,7 @@ body {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background-color: #ffffff;
+
   color: #3498db;
   animation: dotFlashing 1s infinite linear alternate;
   animation-delay: 0s;

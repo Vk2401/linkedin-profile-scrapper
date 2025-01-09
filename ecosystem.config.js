@@ -1,8 +1,8 @@
 module.exports = {
     apps: [{
-      name: 'nextjs-app',
+      name: 'linkedin',
       script: 'npm',
-      args: 'run dev'
+      args: 'start'
     }]
   };
   
