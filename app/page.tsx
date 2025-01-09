@@ -125,7 +125,7 @@ setCompanyData(result.companies)
             </div>
           ) : (
             <div className="text-center">
-              {data && <h1 className="font-bold text-3xl mb-3">{ data.companyId || '' }</h1> }
+              
               {empData && <ProspectTable dataSource={empData} employeeData={responceData} setCurrentPage={setCurrentPage}/>}
             </div>
           )}
